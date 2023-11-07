@@ -26,6 +26,42 @@
           </view>
         </view>
       </view>
+      <!-- <view class="page-section">
+        <view class="weui-cells__title">是否为重复任务</view>
+            <view class="body-view">
+                <switch name="is_repeated" checked="{{switch1Checked}}" bindchange="switch1Change"/>
+            </view>
+        </view> -->
+
+        <view class="page-section">
+        <view class="weui-cells__title">任务模式</view>
+        <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" name="mission_model">
+            <label class="weui-cell weui-check__label">
+              <view class="weui-cell__hd">
+                <radio value="daily" checked="true" />
+              </view>
+              <view class="weui-cell__bd">每日重复</view>
+            </label>
+
+            <label class="weui-cell weui-check__label">
+              <view class="weui-cell__hd">
+                <radio value="repeat" />
+              </view>
+              <view class="weui-cell__bd">无限重复</view>
+            </label>
+
+            <label class="weui-cell weui-check__label">
+              <view class="weui-cell__hd">
+                <radio value="one" />
+              </view>
+              <view class="weui-cell__bd">不重复</view>
+            </label>
+
+          </radio-group>
+        </view>
+      </view>
+
       <view class="btn-area">
         <button style="margin: 30rpx 0; width: 100%" type="primary" formType="submit">确认</button>
         <button style="margin: 30rpx 0; width: 100%; border: 1px solid rgba(0, 0, 0, 0.2);" formType="reset">重置</button>

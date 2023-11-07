@@ -9,6 +9,7 @@ const db = cloud.database();
 exports.main = async (event, context) => {
   // 返回数据库查询结果
   return await db.collection('mission').where({
-    is_finished: true
+    is_finished: true,
+    mission_model: 'daily'
   }).update({data:{is_finished: false}});
 };

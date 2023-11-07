@@ -9,7 +9,8 @@ Page({
     envId: '',
     record: '',
     chosen: '',
-    imgSrc: ''
+    imgSrc: '',
+    mission_model: 'daily'
   },
 
   onLoad(options) {
@@ -22,7 +23,7 @@ Page({
     wx.showLoading()
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     const data = e.detail.value;
-    if (data.mission_content && data.mission_integral){
+    if (data.mission_content && data.mission_integral && data.mission_model){
       wx.cloud.callFunction({
         name: 'quickstartFunctions',
         config: {
@@ -33,7 +34,8 @@ Page({
           data: {
             mission_content: data.mission_content,
             mission_integral: data.mission_integral,
-            mission_image: this.data.imgSrc
+            mission_image: this.data.imgSrc,
+            mission_model: data.mission_model
           }
         }
       }).then(resp => {
@@ -101,8 +103,16 @@ Page({
   clearImgSrc() {
     this.setData({
       haveGetImgSrc: false,
-      imgSrc: ''
+      imgSrc: '',
+      switch1Checked: false
     });
+  },
+
+  radioChange(e){
+    // console.log(e.detail.value)
+    this.setData({
+      mission_model: e.detail.value
+    })
   }
 
 });

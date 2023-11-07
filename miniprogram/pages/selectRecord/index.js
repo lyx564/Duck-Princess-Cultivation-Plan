@@ -88,6 +88,7 @@ Page({
             wx.hideLoading();
           })
         } else {
+          console.log("item.goods_id", item.goods_id)
           wx.cloud.callFunction({
             name: 'quickstartFunctions',
             config: {

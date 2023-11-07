@@ -32,7 +32,9 @@ Page({
       content: '完成 '+data.mission_content,
       success (res) {
         if (res.confirm) {
+          console.log('用户点击确定')
           completeMission(data)
+          
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
@@ -41,6 +43,8 @@ Page({
   },
 
   completeMission(mission) {
+     console.log('!!!!!!!!!!!!!!!!!!!!')
+     console.log(mission)
      wx.showLoading();
      wx.cloud.callFunction({
       name: 'quickstartFunctions',

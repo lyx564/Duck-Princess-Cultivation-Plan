@@ -14,7 +14,8 @@ exports.main = async (event, context) => {
       mission_content: data.mission_content,
       mission_integral: Number(data.mission_integral),
       mission_image: data.mission_image,
-      is_online: true
+      is_online: true,
+      mission_model: data.mission_model
     }]
   });
 };

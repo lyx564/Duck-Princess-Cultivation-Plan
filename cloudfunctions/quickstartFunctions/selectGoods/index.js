@@ -9,10 +9,12 @@ const db = cloud.database();
 exports.main = async (event, context) => {
   // 返回数据库查询结果
   if(event.event && event.event.id){
+    console.log('if')
     return await db.collection('goods').get({
       _id: event.event.id
     });
   } else {
+    console.log('else')
     return await db.collection('goods').where({
       is_online: true
     }).get()

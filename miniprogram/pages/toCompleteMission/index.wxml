@@ -17,10 +17,10 @@
       <view class="code_box_record_detail code_box_record_detail_time">
         <view 
           id="{{item._id}}" 
-          class="button {{item.is_finished && 'button_disabled'}}" 
-          bindtap="{{item.is_finished ? '()=>{}' : 'showMissionModal'}}"
+          class="button {{item.is_finished && item.mission_model != 'repeat' && 'button_disabled'}}" 
+          bindtap="{{item.is_finished && item.mission_model != 'repeat' ? '()=>{}' : 'showMissionModal'}}"
         >
-          {{item.is_finished ? '已完成' : '完成'}}
+          {{item.is_finished && item.mission_model != 'repeat' ? '已完成' : '完成'}}
         </view>
       </view>
     </view>
